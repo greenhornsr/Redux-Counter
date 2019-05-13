@@ -14,7 +14,7 @@ export default (state = initialState, action) => {
     case INCREMENT:
       // console.log(state)
     // Fill in the body of this case
-      return {count: state.count + 1}
+      return {...state, count: state.count + 1}
     case DECREMENT:
     // Fill in the body of this case
     return {...state, count: state.count-1}
