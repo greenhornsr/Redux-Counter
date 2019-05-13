@@ -11,11 +11,27 @@ class Counter extends Component {
         }
     };
 
+    decrementIfEven = () => {
+        // Stretch Problem: Implement an increment function that
+        // only increments if the counter value is odd
+        if (this.props.count %2 === 0){
+            this.props.decrement()
+        }
+    };
+
     incrementAsync = () => {
         // Stretch Problem: Implement an increment function that
         // increments after waiting for one second
         setTimeout(() =>{
             this.props.increment();
+        }, 1000)
+    };
+
+    decrementAsync = () => {
+        // Stretch Problem: Implement an increment function that
+        // increments after waiting for one second
+        setTimeout(() =>{
+            this.props.decrement();
         }, 1000)
     };
 
@@ -37,8 +53,14 @@ class Counter extends Component {
                 <button onClick={this.incrementIfOdd}>
                     Increment if odd
                 </button>
+                <button onClick={this.decrementIfEven}>
+                    Decrement if even
+                </button>
                 <button onClick={this.incrementAsync}>
                     Increment async
+                </button> 
+                <button onClick={this.decrementAsync}>
+                    Decrement async
                 </button> 
             </p>
         );
